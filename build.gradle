@@ -24,9 +24,6 @@ apply plugin: 'scala'
 apply plugin: 'java'
 
 dependencies {
-    gatling project(':s3')
-    gatling project(':jdbc')
-    gatling project(':util')
     gatling 'com.amazonaws:aws-java-sdk-s3:1.11.792'
     gatling 'org.scala-lang:scala-library:2.12.3'
     gatling 'javax.xml.bind:jaxb-api:2.3.1'
