@@ -9,8 +9,18 @@ buildscript {
     }
 }
 
-plugins {
-    id "com.github.lkishalmi.gatling.gradle-gatling-plugin" version "3.3.0"
+pluginBundle {
+  website = 'https://github.com/lkishalmi/gradle-gatling-plugin'
+  vcsUrl = 'https://github.com/lkishalmi/gradle-gatling-plugin'
+  description = 'Gatling Simulation Execution'
+  tags = ['gatling', 'load test', 'stress test', 'performance test', 'scala']
+
+  plugins {
+    gatlingPlugin {
+      displayName = 'Gatling Simulation Execution'
+      id = 'com.github.lkishalmi.gatling'
+    }
+  }
 }
 
 allprojects {
