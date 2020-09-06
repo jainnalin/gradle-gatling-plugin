@@ -5,12 +5,12 @@ buildscript {
         }
     }
     dependencies {
-        classpath "gradle.plugin.com.github.lkishalmi.gatling:gradle-gatling-plugin:3.3.0"
+		classpath "com.github.lkishalmi.gatling:gradle-gatling-plugin:3.3.2"
     }
 }
 
 plugins {
-    id "com.github.lkishalmi.gatling" version "3.3.0"
+	id "com.github.lkishalmi.gatling" version "3.3.2"
 }
 
 allprojects {
@@ -22,27 +22,16 @@ allprojects {
 
 apply plugin: 'scala'
 apply plugin: 'java'
+apply plugin: "com.github.lkishalmi.gatling"
 
 dependencies {
     gatling 'com.amazonaws:aws-java-sdk-s3:1.11.792'
+	gatling 'org.scala-lang:scala-library:2.12.1'
     gatling 'org.scala-lang:scala-library:2.12.3'
     gatling 'javax.xml.bind:jaxb-api:2.3.1'
-    gatling 'com.amazonaws:amazon-sqs-java-messaging-lib:1.0.8'
-    gatling 'com.amazonaws:aws-java-sdk-sqs:1.11.799'
-    gatling 'org.postgresql:postgresql:42.2.12'
     compile 'org.scala-lang:scala-library:2.12.3'
-}
-
-gatling {
-    systemProperties = [
-            'swa.testEnv': project.hasProperty('swaTestEnv') ? project.swaTestEnv : 'dev'
-    ]
-}
-
-tasks.register("checkDetachedDependencies") {
-    doLast {
-        def detachedConf = configurations.detachedConfiguration(dependencies.create("org.apache.commons:commons-lang3:3.3.1"))
-        detachedConf.resolutionStrategy.disableDependencyVerification()
-        println(detachedConf.files)
-    }
-}
+	compile 'org.scala-lang:scala-library:2.12.1'
+	gatling 'com.google.code.gson:gson:2.8.0'
+	gatlingImplementation 'org.apache.commons:commons-lang3:3.4'
+	gatlingRuntimeOnly 'cglib:cglib-nodep:3.2.0'
+}	
