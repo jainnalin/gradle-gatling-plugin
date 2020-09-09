@@ -1,0 +1,10 @@
+{
+  "simulation": "MyFirstScalaScript",
+  "simulationId": "myfirstscalascript",
+  "start": 1599659212561,
+  "description": "",
+  "scenarios": ["My 1st Script"],
+  "assertions": [
+
+  ]
+}

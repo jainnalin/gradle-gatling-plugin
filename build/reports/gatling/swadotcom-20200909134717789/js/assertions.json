@@ -1,0 +1,10 @@
+{
+  "simulation": "SWADotCom",
+  "simulationId": "swadotcom",
+  "start": 1599659237789,
+  "description": "",
+  "scenarios": ["SWADotCom"],
+  "assertions": [
+
+  ]
+}

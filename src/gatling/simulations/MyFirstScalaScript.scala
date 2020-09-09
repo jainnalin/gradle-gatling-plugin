@@ -4,7 +4,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 
-class MyFirstScalaScript extends Simulation{
+  class MyFirstScalaScript extends Simulation{
 
   //1 HTTP Conf
   val httpConf = http.baseUrl(url = "http://localhost:8080/app/")
